@@ -3,7 +3,8 @@ Get root shell priv escalation on Android with DirtyCow.
 
 First, git clone the project from https://github.com/timwr/CVE-2016-5195
 
-Second, we'll need ndk-build from https://dl.google.com/android/repository/android-ndk-r15b-linux-x86_64.zip (https://developer.android.com/ndk/downloads/index.html)
+Second, we'll need ndk-build from https://dl.google.com/android/repository/android-ndk-r15b-linux-x86_64.zip 
+(https://developer.android.com/ndk/downloads/index.html)
 
 Unzip the above ndk files and then updatedb; locate ndk-build and copy the path.
 
