@@ -1,5 +1,5 @@
 Get root shell priv escalation on Android with DirtyCow.
---	Tested with Kyocera Hydro running Andorid 4.4.2
+--	Tested with Kyocera Hydro Vibe running Andorid 4.4.2
 
 First, git clone the project from https://github.com/timwr/CVE-2016-5195
 
