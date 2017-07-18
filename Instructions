@@ -29,7 +29,12 @@ Once your shell comes back, run the following:
 	
 You should now be dropped in as root. You can disable services, install services, remove(rw files) that are owned by root.
 You won't be able to delete files from the 'ro' file system. Remounting as 'rw' (for me anyway) did not seem to work, but I 
-suspect with some more time trying different things I'll figure this out. The whole reason I did this was so I can remove an 
-apk preinstalled by my carrier. While I have root, still have not been able to do this due to the 'ro' system files.
+suspect with some more time trying different things I'll figure this out. 
+
+See here for possibly why that is(Selinux?) - https://github.com/timwr/CVE-2016-5195/issues/9
+
+The whole reason I did this was so I can remove an apk preinstalled by my carrier. While I have root, 
+still have not been able to do this due to the 'ro' system files, but hopefully this helps others get some use
+out of their system as root for testing or whatever your into.
 
 Reboot, and all will be back to normal.
