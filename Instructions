@@ -1,0 +1,27 @@
+Get root shell priv escalation on Android with DirtyCow.
+--	Tested with Kyocera Vibe running Andorid 4.4.2
+
+First, git clone the project from https://github.com/timwr/CVE-2016-5195
+Second, we'll need ndk-build from https://dl.google.com/android/repository/android-ndk-r15b-linux-x86_64.zip (https://developer.android.com/ndk/downloads/index.html)
+Unzip the above ndk files and then updatedb; locate ndk-build and copy the path.
+in your CVE dirty cow directory, open the Makefile and prepend ndk-build with your path from above. For example, my line 8 looks like the following(sans quotes):
+"	/root/HDD2/Kyocera/android-ndk-r15b/build/ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk APP_ABI=$(ARCH) APP_PLATFORM=android-$(SDK_VERSION)"
+
+Save this file. 
+Now plugin your phone, make sure adb debugging is enabled under developer options.
+
+Once you have accpeted your phones prompt for accepting the connection(or pre-saved for this device) you are ready to run the following from a terminal on the desktop machine:
+
+	make root
+
+We'll now wait till the shell comes back to your normal prompt in the terminal. If this worked you should see a message like:
+
+	[*] exploited some info here
+
+Once your shell comes back, run the following:
+
+	adb shell /system/bin/run-as
+	
+You should now be dropped in as root. You can disable services, install services, remove(rw files) that are owned by root. you won't be able to delete files from the 'ro' system. Remounting(for me anyway) did not seem to work, but I suspect with some more time trying, I will eventually figure out how to remount to remove APK files pre-installed from my carrier that I want to remove.
+
+Reboot, and all will be back to normal.
